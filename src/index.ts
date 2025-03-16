@@ -11,26 +11,36 @@ export enum GuessResult {
 
 const generateRandomNumber = ({ min, max }: NumberRange): number => {
   if (min > max) {
-    throw new InvalidRangeError('Minimum value cannot be greater than maximum value.');
+    throw new InvalidRangeError(
+      'Minimum value cannot be greater than maximum value.'
+    );
   }
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 export class NumberGuessingGame {
-  private range: NumberRange;
+  private _range: NumberRange;
   private targetNumber: number;
-  private attempts: number;
+  private _attempts: number;
 
   constructor(range: NumberRange = { min: 1, max: 100 }) {
-    this.range = range;
+    this._range = range;
     this.targetNumber = generateRandomNumber(range);
-    this.attempts = 0;
+    this._attempts = 0;
+  }
+
+  get range(): NumberRange {
+    return this._range;
+  }
+
+  get attempts(): number {
+    return this._attempts;
   }
 
   guess(guess: number): GuessResult {
     this.validateGuess(guess);
 
-    this.attempts++;
+    this._attempts++;
 
     if (guess < this.targetNumber) {
       return GuessResult.TooLow;
@@ -42,9 +52,9 @@ export class NumberGuessingGame {
   }
 
   private validateGuess(guess: number): void {
-    if (guess < this.range.min || guess > this.range.max) {
+    if (guess < this._range.min || guess > this._range.max) {
       throw new InvalidGuessError(
-        `Guess must be between ${this.range.min} and ${this.range.max}.`
+        `Guess must be between ${this._range.min} and ${this._range.max}.`
       );
     }
   }
