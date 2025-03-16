@@ -1,5 +1,43 @@
 {
+  "name": "guess-number-cli",
+  "version": "1.0.0",
+  "description": "A command line number guessing game with validation and error handling.",
+  "keywords": [
+    "cli",
+    "game",
+    "number",
+    "number-guessing",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/PuppyOne/guess-number-cli#readme",
+  "bugs": {
+    "url": "https://github.com/PuppyOne/guess-number-cli/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PuppyOne/guess-number-cli.git"
+  },
+  "license": "MIT",
+  "author": "PuppyOne <zheng_xz@qq.com>",
   "type": "module",
+  "main": "src/index.js",
+  "types": "./src/index.d.ts",
+  "bin": {
+    "guess-number-cli": "bin/cli.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:dev": "tsc --sourceMap",
+    "test": "mocha",
+    "coverage": "c8 --reporter=html --reporter=text --all npm test",
+    "coverage:ci": "c8 --100 --reporter=html --reporter=text --all npm test"
+  },
   "dependencies": {
     "@inquirer/prompts": "^7.3.3"
   },
