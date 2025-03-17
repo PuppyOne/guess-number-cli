@@ -26,7 +26,7 @@
   "main": "src/index.js",
   "types": "./src/index.d.ts",
   "bin": {
-    "guess-number-cli": "bin/cli.js"
+    "guess-number": "bin/cli.js"
   },
   "directories": {
     "test": "test"
