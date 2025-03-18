@@ -10,7 +10,8 @@
     "typescript"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "homepage": "https://github.com/PuppyOne/guess-number-cli#readme",
   "bugs": {
