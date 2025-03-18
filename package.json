@@ -1,6 +1,6 @@
 {
   "name": "guess-number-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A command line number guessing game with validation and error handling.",
   "keywords": [
     "cli",
