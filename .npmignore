@@ -4,8 +4,8 @@
 
 /node_modules/
 /coverage/
-*.d.ts
-*.js
-*.js.map
 /tsconfig.json
 /test/
+*.js.map
+*.ts
+!*.d.ts
