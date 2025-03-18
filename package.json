@@ -36,7 +36,7 @@
     "build:dev": "tsc --sourceMap",
     "test": "mocha",
     "coverage": "c8 --reporter=html --reporter=text --all npm test",
-    "coverage:ci": "c8 --100 --reporter=html --reporter=text --all npm test"
+    "coverage:ci": "c8 --100 --reporter=html --reporter=text npm test"
   },
   "dependencies": {
     "@inquirer/prompts": "^7.3.3"
